@@ -26,7 +26,7 @@ abstract class TranslatableModel extends Model
         $localeCode = $localeCode ?: app()->getLocale();
 
         $query->addSelect([
-            'current_translate_id' => $this->getTranslationModel()::select('id')
+            'translation_id' => $this->getTranslationModel()::select('id')
                 ->whereColumn($this->getForeignKeyForTranslation(), "{$this->getTable()}.id")
                 ->where($this->getLocaleCodeColumn(), $localeCode)
                 ->take(1)
