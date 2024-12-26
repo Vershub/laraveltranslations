@@ -11,11 +11,6 @@ abstract class TranslatableModel extends Model
 
     abstract protected function getForeignKeyForTranslation(): string;
 
-    protected function getLocaleCodeColumn(): string
-    {
-        return 'locale_code';
-    }
-
     public function translation(): BelongsTo
     {
         return $this->belongsTo($this->getTranslationModel());
@@ -28,7 +23,7 @@ abstract class TranslatableModel extends Model
         $query->addSelect([
             'translation_id' => $this->getTranslationModel()::select('id')
                 ->whereColumn($this->getForeignKeyForTranslation(), "{$this->getTable()}.id")
-                ->where($this->getLocaleCodeColumn(), $localeCode)
+                ->where(config('laraveltranslations.locale_code_column'), $localeCode)
                 ->take(1)
         ])->with('translation');
     }
