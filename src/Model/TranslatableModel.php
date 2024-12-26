@@ -1,6 +1,6 @@
 <?php
 
-namespace Vershub\laraveltranslations\Model;
+namespace Vershub\LaravelTranslations\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,7 +9,7 @@ abstract class TranslatableModel extends Model
 {
     abstract protected function getTranslationModel(): string;
 
-    abstract protected function getForeignKeyForTranslation(): string;
+    abstract protected function getForeignKeyForTranslation(): string;/**/
 
     protected function getLocaleCodeColumn(): string
     {
