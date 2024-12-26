@@ -9,7 +9,7 @@ abstract class TranslatableModel extends Model
 {
     abstract protected function getTranslationModel(): string;
 
-    abstract protected function getForeignKeyForTranslation(): string;/**/
+    abstract protected function getForeignKeyForTranslation(): string;
 
     protected function getLocaleCodeColumn(): string
     {
@@ -32,5 +32,4 @@ abstract class TranslatableModel extends Model
                 ->take(1)
         ])->with('translation');
     }
-
 }
