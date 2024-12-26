@@ -121,6 +121,13 @@ foreach ($carBrands as $carBrand) {
     echo $carBrand->translation->name;  
 }
 ```
+#### Select specific columns from translations table 
+
+```php
+use App\Models\CarBrand;  
+
+$carBrands = CarBrand::withTranslation('fr:id,locale_code,name,description')->get();  
+```
 
 ## ⚙️ Customization  
 
