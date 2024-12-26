@@ -126,21 +126,11 @@ foreach ($carBrands as $carBrand) {
 
 ### Override the Locale Code Column  
 
-By default, the package uses `locale_code`. You can override this by adding the `getLocaleCodeColumn` method to your model:  
+By default, the package uses `locale_code`. You can change this by publishing the config file and change the value of  `locale_code_column` key: 
 
 ```php
-protected function getTranslationModel(): string  
-{  
-    return CustomTranslationModel::class;  
-}  
-
-protected function getForeignKeyForTranslation(): string  
-{  
-    return 'custom_foreign_key';  
-}
-
-protected function getLocaleCodeColumn(): string  
-{  
-    return 'language_code';  
-}  
+return [
+    'locale_code_column' => 'locale_code'
+];
+    
 ```
