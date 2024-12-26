@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Laravel Translations</h1>
   <p>
-    <strong>A lightweight Laravel package for handling multilingual Eloquent models.</strong>
+    <strong>This lightweight Laravel package enables you to eager load models along with their translations in the specified language, efficiently preventing the N+1 query problem. Additionally, it allows you to retrieve a single translation (instead of an array) without unnecessarily loading extra models into memory..</strong>
   </p>
   <p>
     <a href="https://packagist.org/packages/vershub/laraveltranslations">
