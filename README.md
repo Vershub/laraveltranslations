@@ -68,6 +68,34 @@ class CarBrandTranslation extends Model
 }
 ```
 
+Example of translation table migration:   
+
+```php  
+use Illuminate\Database\Migrations\Migration;  
+use Illuminate\Database\Schema\Blueprint;  
+use Illuminate\Support\Facades\Schema;  
+
+class CreateCarBrandTranslationsTable extends Migration  
+{  
+    public function up()  
+    {  
+        Schema::create('car_brand_translations', function (Blueprint $table) {  
+            $table->id();  
+            $table->foreignId('car_brand_id')->constrained()->cascadeOnDelete();  
+            $table->string('locale_code');  
+            $table->string('name');  
+            $table->text('description')->nullable();  
+            $table->timestamps();  
+        });  
+    }  
+
+    public function down()  
+    {  
+        Schema::dropIfExists('car_brand_translations');  
+    }  
+}  
+```
+
 ### 3. Use the `withTranslation` Scope  
 
 #### Retrieve translations for the current locale  
