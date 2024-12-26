@@ -1,0 +1,27 @@
+{
+    "name": "vershub/laraveltranslations",
+    "description": "laravel package for translatable models",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vers"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "vershub\\laraveltranslations\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vershub\\LaravelTranslations\\LaravelTranslationsServiceProvider"
+            ]
+        }
+    }
+}
