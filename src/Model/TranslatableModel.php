@@ -18,6 +18,10 @@ abstract class TranslatableModel extends Model
 
     public function scopeWithTranslation($query, string $localeCode = null): void
     {
+        $localeCodeAndColumns = explode(':', $localeCode);
+        $localeCode = $localeCodeAndColumns[0];
+        $columns = $localeCodeAndColumns[1] ?? '*';
+
         $localeCode = $localeCode ?: app()->getLocale();
 
         $query->addSelect([
@@ -25,6 +29,6 @@ abstract class TranslatableModel extends Model
                 ->whereColumn($this->getForeignKeyForTranslation(), "{$this->getTable()}.id")
                 ->where(config('laraveltranslations.locale_code_column'), $localeCode)
                 ->take(1)
-        ])->with('translation');
+        ])->with("translation:{$columns}");
     }
 }
