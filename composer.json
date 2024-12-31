@@ -18,6 +18,7 @@
         }
     },
     "extra": {
+        "readme": "README.md",
         "laravel": {
             "providers": [
                 "Vershub\\LaravelTranslations\\LaravelTranslationsServiceProvider"
