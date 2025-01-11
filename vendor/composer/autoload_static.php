@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit0f1ea0f190cde900ecebef51c71f1a87
 {
     public static $prefixLengthsPsr4 = array (
-        'v' => 
+        'V' => 
         array (
-            'vershub\\laraveltranslations\\' => 28,
+            'Vershub\\LaravelTranslations\\' => 28,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'vershub\\laraveltranslations\\' => 
+        'Vershub\\LaravelTranslations\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

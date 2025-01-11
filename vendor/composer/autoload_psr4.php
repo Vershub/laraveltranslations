@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'vershub\\laraveltranslations\\' => array($baseDir . '/src'),
+    'Vershub\\LaravelTranslations\\' => array($baseDir . '/src'),
 );

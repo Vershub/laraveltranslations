@@ -4,12 +4,22 @@ namespace Vershub\LaravelTranslations\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 abstract class TranslatableModel extends Model
 {
     abstract protected function getTranslationModel(): string;
 
     abstract protected function getForeignKeyForTranslation(): string;
+
+    public function translates(): HasMany
+    {
+        return $this->hasMany(
+            related: $this->getTranslationModel(),
+            foreignKey: $this->getForeignKeyForTranslation(),
+            localKey: 'id'
+        );
+    }
 
     public function translation(): BelongsTo
     {
