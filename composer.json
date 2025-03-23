@@ -8,7 +8,7 @@
             "name": "vers"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0.1",
     "require": {
         "php": ">=8.2"
     },
