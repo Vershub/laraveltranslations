@@ -23,7 +23,7 @@
 Install the package via Composer:  
 
 ```bash  
-composer require vershub/laraveltranslations:dev-master
+composer require vershub/laraveltranslations
 ```
 
 ## 🛠️ Usage  
